@@ -29,4 +29,8 @@ public class Calculadora {
 		return historico;
 	}
 
+	public Integer subrair(int minuendo, int subtraendo) {
+		return minuendo - subtraendo;
+	}
+
 }
