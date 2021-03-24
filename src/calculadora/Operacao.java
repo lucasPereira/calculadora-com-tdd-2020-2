@@ -18,6 +18,6 @@ public abstract class Operacao {
 		return segundo;
 	}
 
-	abstract String formatar();
+	public abstract String formatar();
 
 }

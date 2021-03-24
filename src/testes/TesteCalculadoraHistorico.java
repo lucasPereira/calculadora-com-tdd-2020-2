@@ -1,4 +1,4 @@
-package calculadora;
+package testes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import calculadora.Calculadora;
+import calculadora.Operacao;
 
 public class TesteCalculadoraHistorico {
 
