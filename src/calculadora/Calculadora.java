@@ -6,7 +6,7 @@ import java.util.List;
 public class Calculadora {
 
 	private Integer acumulador;
-	private List<String> historico;
+	private List<Operacao> historico;
 
 	public Calculadora() {
 		acumulador = 0;
@@ -14,7 +14,7 @@ public class Calculadora {
 	}
 
 	public Integer somar(int adendo, int augendo) {
-		String operacao = String.format("%d + %d", adendo, augendo);
+		Operacao operacao = new Soma(adendo, augendo);
 		historico.add(0, operacao);
 		acumulador = acumulador + adendo + augendo;
 		return acumulador;
@@ -25,11 +25,13 @@ public class Calculadora {
 		return acumulador;
 	}
 
-	public List<String> obterHistorico() {
+	public List<Operacao> obterHistorico() {
 		return historico;
 	}
 
 	public Integer subrair(int minuendo, int subtraendo) {
+		Operacao operacao = new Subtracao(minuendo, subtraendo);
+		historico.add(0, operacao);
 		return minuendo - subtraendo;
 	}
 

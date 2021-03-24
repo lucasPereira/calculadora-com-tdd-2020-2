@@ -19,21 +19,30 @@ public class TesteCalculadoraHistorico {
 	@Test
 	void obterHistoricoDeCalculadoraComUmaSomaDeDoisOperandos() throws Exception {
 		calculadora.somar(0, 1);
-		List<String> historico = calculadora.obterHistorico();
+		List<Operacao> historico = calculadora.obterHistorico();
 
 		assertEquals(1, historico.size());
-		assertEquals("0 + 1", historico.get(0));
+		assertEquals("0 + 1", historico.get(0).formatar());
 	}
 
 	@Test
 	void obterHistoricoDeCalculadoraComDuasSomasDeDoisOperandos() throws Exception {
 		calculadora.somar(0, 1);
 		calculadora.somar(1, 2);
-		List<String> historico = calculadora.obterHistorico();
+		List<Operacao> historico = calculadora.obterHistorico();
 
 		assertEquals(2, historico.size());
-		assertEquals("1 + 2", historico.get(0));
-		assertEquals("0 + 1", historico.get(1));
+		assertEquals("1 + 2", historico.get(0).formatar());
+		assertEquals("0 + 1", historico.get(1).formatar());
+	}
+
+	@Test
+	void obterHistoricoDeCalculadoraComUmaSubtracaoDeDoisOperandos() throws Exception {
+		calculadora.subrair(0, 1);
+		List<Operacao> historico = calculadora.obterHistorico();
+
+		assertEquals(1, historico.size());
+		assertEquals("0 - 1", historico.get(0).formatar());
 	}
 
 }
